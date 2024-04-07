@@ -4,9 +4,9 @@ from .resadapter_loraloader import NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPIN
 
 
 def download_models(model_name, models_dir):
-    hf_hub_download(repo_id="jiaxiangc/res-adapter", subfolder=f"{model_name}", filename="pytorch_lora_weights.safetensors", local_dir=models_dir)
+    hf_hub_download(repo_id="jiaxiangc/res-adapter", subfolder=f"{model_name}", filename="pytorch_lora_weights.safetensors", local_dir=models_dir, endpoint="https://hf-mirror.com")
     if "interpolation" not in model_name:
-        hf_hub_download(repo_id="jiaxiangc/res-adapter", subfolder=model_name, filename="diffusion_pytorch_model.safetensors", local_dir=models_dir)
+        hf_hub_download(repo_id="jiaxiangc/res-adapter", subfolder=model_name, filename="diffusion_pytorch_model.safetensors", local_dir=models_dir, endpoint="https://hf-mirror.com")
 
 
 base_path = os.path.dirname(os.path.realpath(__file__))
